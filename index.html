@@ -1,11 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Hand</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>simpleHand</title>
+<link href="./front_files/style.css" rel="stylesheet">
+<script type="text/javascript" src="./front_files/jquery.mlens-1.0.min.js"></script> 
+<script type="text/javascript" src="./front_files/jquery.js"></script>
+
+
+<style>
+  p.serif{
+    font-family:"Times New Roman", Times, serif;
+  }
+  p.sansserif{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+</style>
+  
 </head>
+
 <body>
-    <h1>Welcome to SimpleHand's GitHub Page!</h1>
+<div class="content">
+  <h1><strong>A Simple Baseline for Efficient Hand Mesh Reconstruction</strong>&nbsp;&nbsp;<small>(CVPR 2024)</small></h1>
+  <p id="authors" class="serif">
+
+    Zhishan Zhou<sup>*</sup></a>, 
+    Shihao Zhou<sup>*</sup></a>, 
+    Zhi Lv,</sup></a> 
+    Minqiang Zou,</sup></a> 
+    Yao Tang</sup></a> 
+    and Jiajun Liang<sup>✝</sup></a> 
+    <br>
+    <a style="font-size: 0.7em"><sup>*</sup> Equally Contribution. ✝</sup> Corresponding Author.</a>
+    <br>
+    <span style="font-size: 0.8em; margin-top: 0.5em">
+      <a href="https://en.jiiov.com/"></sup>JIIOV Technology</a>
+    </span>
+  </p>
+
+  <font size="+1">
+    <p style="text-align: center;" class="serif">
+      <a href="https://arxiv.org/pdf/2403.01813.pdf" target="_blank" style="font-weight: bold;">[Paper]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://github.com/patienceFromZhou/simpleHand" target="_blank" style="font-weight: bold;">[Github]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#bibtex" style="font-weight: bold;">[BibTeX]</a>
+    </p><br>
+  </font>
+
+  <img class="summary-img" src="figs/time_aligned.gif" style="width:100%;"> <br>
+  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif"></p>
+  <p style="font-size: 1.2em" class="serif">
+    JIIOV Technology is a leading biometric recognition solutions provider. We are now working on Extended Reality (XR) hand interaction algorithm and modules. <br>
+    We transplanted simpleHand design into realworld device to make a practically test. It shows advantages especially in finger interaction senario, while retains realtime efficiency. See <a href="https://youtu.be/4mlu0kzl-OY" target="_blank" style="font-weight: bold;">here</a> for full example videos. We will provide more videos comparing our method with Quest and AVP.
+    </p>
+
+</div>
+
+<div class="content">
+  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">Methodology</p>
+  <p style="font-size: 1.2em" class="serif">
+    We propose simnpleHand, a simple yet effective baseline that not only surpasses state-of-the-art (SOTA) methods but also demonstrates computational efficiency. SimpleHand can be easily transplant to mainstream backbones and datasets.<br>
+    SimpleHand consists a backbone and a mesh decoder, while mesh decoder is abstracted into a token generator and a mesh regressor. <br>
+    From functional perspective, Token generator samples representative tokens using predicted 2d keypoints. Mesh regressor cascadely lifts the sampled tokens into meshes. We proposed a concept of "CORE STRUCTURE", which is the minimum structure that meets these functions.<br>
+  </p>
+  <img class="summary-img" src="figs/framework.png" style="width:100%;"> <br>
+</div>
+
+<div class="content">
+  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">Results and Comparisons</p>
+  <p style="font-size: 1.2em" class="serif">
+    SimpleHand found the component with the greatest performance gain and implemented them using the simplest structure. Therefore, it has good performance in both efficiency and accuracy.
+    <img class="summary-img" src="figs/overview.png" style="width:90%;"> <br>
+    Comparison to existing work
+    <img class="summary-img" src="figs/table.png" style="width:100%;"> <br>
+    SimpleHand capitalizes on the strengths of existing methodologies, thereby outperforming them in numerous challenging scenarios.This is particularly evident in intricate finger interactions, like pinching or twisting, as well as in complex and unconventional gestures.
+  </p>
+  <img class="summary-img" src="figs/comparison.png" style="width:100%;"> <br>
+</div>
+
+<div class="content">
+  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">About us</p>
+  <p style="font-size: 1.2em" class="serif">
+    Founded in February 2020, JIIOV Technology is a consumer electronics provider specializing in fingerprint solutions, smart components and innovative sensor technology. Within one year of our establishment, our products had been successfully applied in leading smartphone companies devices. We owe this achievement to our employees commitment to our core value of "pioneering innovation"<br>
+    <p style="font-size: 1.2em; font-weight: bold" class="serif">Our mission</p><p style="font-size: 1.2em" class="serif"> Creating a brand new interactive experience with AI and sensors, enable the world to accelerate into a fully intelligent era.</p>
+    <p style="font-size: 1.2em; font-weight: bold" class="serif">Our vision</p><p style="font-size: 1.2em" class="serif"> Creating an era of safe, user-friendly, convenient and smart interaction.</p>
+    <p style="font-size: 1.2em; font-weight: bold" class="serif">Through the ongoing efforts of all JIIOV employees, we confidently provide you with better, smarter products and experiences.<br>
+    — Chen Keqing </p>
+  </p>
+</div>
+</div>
+
+<div class="content" id="bibtex">
+  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">BibTeX</p>
+  <code> @misc{zhou2024simple,<br>
+  &nbsp;&nbsp;title={A Simple Baseline for Efficient Hand Mesh Reconstruction},<br>
+  &nbsp;&nbsp;author={Zhishan Zhou and Shihao. zhou and Zhi Lv and Minqiang Zou and Yao Tang and Jiajun Liang},<br>
+  &nbsp;&nbsp;year={2024},<br>
+  &nbsp;&nbsp;archivePrefix={arXiv},<br>
+  &nbsp;&nbsp;primaryClass={cs.CV}<br>
+  } </code> 
+</div>
+
+<div class="content">
+  <p class="serif">
+    Project page template is borrowed from <a href="https://dreambooth.github.io/">DreamBooth</a>.
+  </p>
+</div>
+
 </body>
+
+<script>
+var videos = document.getElementsByClassName("clickplay");
+for (var i = 0; i < videos.length; i++) {
+  videos[i].addEventListener("click", function() {
+    this.play();
+  });
+  videos[i].addEventListener("ended", function() {
+    this.pause();
+    this.currentTime = 0;
+  });
+}
+</script>
+
 </html>
