@@ -174,3 +174,10 @@ p code {
 .example-img {
   width: 100%;
 }
+
+@font-face {
+  font-family: 'MyKaiti';
+  src: url('./kaiti.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
