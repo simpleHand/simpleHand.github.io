@@ -45,61 +45,27 @@
     </p><br>
   </font>
 
-<head>
-  <!-- <meta charset="UTF-8"> -->
-  <title>Bilibili Video Embed with Lazy Loading</title>
-  <style>
-  .video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 100vh; 使用视口高度，确保在浏览器窗口中垂直居中 */
-  }
-  #bilibili-cover {
-      cursor: pointer;
-      background-image: url('./figs/cover.png');
-      background-size: cover;
-      width: 640px; /* 调整为合适的宽度 */
-      height: 360px; /* 谁整为合适的高度，确保16:9的比例 */
-      position: relative;    
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  #bilibili-cover::after {
-      content: '▶';
-      font-size: 100px;
-      color: white;
-  }
-  </style>
-  </head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Centered Local Video Playback</title>
+    <style>
+      /* 这里的CSS样式用于居中视频 */
+      .video-container {
+        display: flex;       /* 使用Flexbox布局 */
+        justify-content: center; /* 水平居中 */
+        align-items: center;     /* 垂直居中 */
+      }
+    </style>
+    </head>
   <body>
     <div class="video-container">
-      <div id="bilibili-cover"></div>
-  </div>
-  
-  <script>
-  document.getElementById('bilibili-cover').addEventListener('click', function() {
-      var iframe = document.createElement('iframe');
-      iframe.setAttribute('src', 'demo.mp4');
-      iframe.setAttribute('scrolling', 'no');
-      iframe.setAttribute('border', '0');
-      iframe.setAttribute('frameborder', 'no');
-      iframe.setAttribute('framespacing', '0');
-      iframe.setAttribute('allowfullscreen', 'true');
-      iframe.style.width = '640px'; // 调整为封面图的宽度
-      iframe.style.height = '360px'; // 调整为封面图的高度
-  
-      var coverDiv = document.getElementById('bilibili-cover');
-      coverDiv.parentNode.replaceChild(iframe, coverDiv);
-  });
-  
-  </script>
-   <p style="text-align: center; font-size: 1.2em; color: red" class="serif"> Click to play the demo video</p> 
+  <video width="640" height="360" controls>
+    <source src="demo.mp4" type="video/mp4">
+  </video>
+</div>
+<p style="text-align: center; font-size: 1.2em; color: red" class="serif"> Click to play the demo video</p> 
   </body>
 
-</html>
-  
   <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif"></p>
   <p style="font-size: 1.2em" class="serif">
     <!-- An alternate Bilibili source is <a href="https://www.bilibili.com/video/BV1Jx42127bZ/" target="_blank" style="font-weight: bold;">HERE</a>.<br> -->
