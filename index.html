@@ -45,33 +45,64 @@
     </p><br>
   </font>
 
-<!DOCTYPE html>
-<html>
 <head>
-    <!-- <title>YouTube Video Embed</title> -->
-    <style>
-        .video-container {
-            text-align: center; /* 使内部元素居中 */
-        }
-        .video-container iframe {
-            margin: 0 auto; /* iframe自身居中 */
-            display: block; /* 防止出现额外的空间 */
-        }
-    </style>
-</head>
-
-<body>
-    <!-- YouTube Video -->
+  <!-- <meta charset="UTF-8"> -->
+  <title>Bilibili Video Embed with Lazy Loading</title>
+  <style>
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; 使用视口高度，确保在浏览器窗口中垂直居中 */
+  }
+  #bilibili-cover {
+      cursor: pointer;
+      background-image: url('./figs/cover.png');
+      background-size: cover;
+      width: 640px; /* 调整为合适的宽度 */
+      height: 360px; /* 谁整为合适的高度，确保16:9的比例 */
+      position: relative;    
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  #bilibili-cover::after {
+      content: '▶';
+      font-size: 100px;
+      color: white;
+  }
+  </style>
+  </head>
+  <body>
     <div class="video-container">
-        <iframe width="640" height="480" src="https://www.youtube.com/embed/4mlu0kzl-OY" frameborder="0" allowfullscreen></iframe>
-    </div>
+      <div id="bilibili-cover"></div>
+  </div>
+  
+  <script>
+  document.getElementById('bilibili-cover').addEventListener('click', function() {
+      var iframe = document.createElement('iframe');
+      iframe.setAttribute('src', 'https://player.bilibili.com/player.html?bvid=BV1Jx42127bZ&autoplay=1');
+      iframe.setAttribute('scrolling', 'no');
+      iframe.setAttribute('border', '0');
+      iframe.setAttribute('frameborder', 'no');
+      iframe.setAttribute('framespacing', '0');
+      iframe.setAttribute('allowfullscreen', 'true');
+      iframe.style.width = '640px'; // 调整为封面图的宽度
+      iframe.style.height = '360px'; // 调整为封面图的高度
+  
+      var coverDiv = document.getElementById('bilibili-cover');
+      coverDiv.parentNode.replaceChild(iframe, coverDiv);
+  });
+  
+  </script>
+   <p style="text-align: center; font-size: 1.2em; color: red" class="serif"> Click to play the demo video</p> 
+  </body>
 
-</body>
 </html>
   
   <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif"></p>
   <p style="font-size: 1.2em" class="serif">
-    An alternate Bilibili source is <a href="https://www.bilibili.com/video/BV1Jx42127bZ/" target="_blank" style="font-weight: bold;">HERE</a>.<br>
+    <!-- An alternate Bilibili source is <a href="https://www.bilibili.com/video/BV1Jx42127bZ/" target="_blank" style="font-weight: bold;">HERE</a>.<br> -->
     JIIOV Technology is a leading biometric recognition solutions provider. We are now working on Extended Reality (XR) hand interaction algorithm and modules. <br>
     We transplanted simpleHand design into realworld device to make a practically test. It shows advantages especially in finger interaction senario, while retains realtime efficiency.
     Additional videos showcasing a comparison between our method and both Quest and AVP will be made available soon.
