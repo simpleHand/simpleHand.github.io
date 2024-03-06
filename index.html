@@ -45,30 +45,33 @@
     </p><br>
   </font>
 
-  <head>
-    <meta charset="UTF-8">
-    <title>Centered Local Video Playback</title>
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <title>YouTube Video Embed</title> -->
     <style>
-      /* 这里的CSS样式用于居中视频 */
-      .video-container {
-        display: flex;       /* 使用Flexbox布局 */
-        justify-content: center; /* 水平居中 */
-        align-items: center;     /* 垂直居中 */
-      }
+        .video-container {
+            text-align: center; /* 使内部元素居中 */
+        }
+        .video-container iframe {
+            margin: 0 auto; /* iframe自身居中 */
+            display: block; /* 防止出现额外的空间 */
+        }
     </style>
-    </head>
-  <body>
-    <div class="video-container">
-  <video width="640" height="360" controls>
-    <source src="demo.mp4" type="video/mp4">
-  </video>
-</div>
-<p style="text-align: center; font-size: 1.2em; color: red" class="serif"> Click to play the demo video</p> 
-  </body>
+</head>
 
-  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif"></p>
-  <p style="font-size: 1.2em" class="serif">
-    <!-- An alternate Bilibili source is <a href="https://www.bilibili.com/video/BV1Jx42127bZ/" target="_blank" style="font-weight: bold;">HERE</a>.<br> -->
+<body>
+    <!-- YouTube Video -->
+    <div class="video-container">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/4mlu0kzl-OY" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+</body>
+</html>
+  
+  <!-- <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif"></p> -->
+    <p style="text-align: center; font-size: 1.2em" class="serif">Click to play the demo video. An alternate Bilibili source is <a href="https://www.bilibili.com/video/BV1Jx42127bZ/" target="_blank" style="font-weight: bold;">HERE</a>.</p>
+    <p style="text-align: left; font-size: 1.2em" class="serif">
     JIIOV Technology is a leading biometric recognition solutions provider. We are now working on Extended Reality (XR) hand interaction algorithm and modules. <br>
     We transplanted simpleHand design into realworld device to make a practically test. It shows advantages especially in finger interaction senario, while retains realtime efficiency.
     Additional videos showcasing a comparison between our method and both Quest and AVP will be made available soon.
